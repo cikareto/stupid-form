@@ -1,0 +1,34 @@
+.register-form {
+  background: rgb(91, 99, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(91, 99, 255, 1) 0%,
+    rgba(255, 205, 64, 1) 100%
+  );
+}
+
+.register-form__form {
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 2rem 2rem 4rem;
+}
+
+.register-form h1 {
+  margin-bottom: 4rem;
+}
+
+.register-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.register-form .btn {
+  width: calc(100% - 2rem);
+  margin: 1rem;
+}

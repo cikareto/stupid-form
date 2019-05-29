@@ -1,12 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { reducer as formReducer } from 'redux-form';
+import { logger } from 'redux-logger';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Registration from './features/Registration/index';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootReducer = combineReducers({
+  form: formReducer
+});
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const store = createStore(rootReducer, applyMiddleware(logger));
+
+render(
+  <Provider store={store}>
+    <Router>
+      <Route path="/" component={Registration} />
+    </Router>
+  </Provider>,
+  document.getElementById('root')
+);
