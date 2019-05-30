@@ -1,3 +1,4 @@
+import { withRouter } from 'react-router-dom';
 import Registration from './registration';
 
-export default Registration;
+export default withRouter(Registration);

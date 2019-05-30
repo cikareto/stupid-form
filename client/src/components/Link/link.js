@@ -5,18 +5,24 @@ import cx from 'classnames';
 import './style.css';
 
 const props = {
-  primary: PropTypes.bool
+  primary: PropTypes.bool,
+  onClick: PropTypes.func
 };
 
 const defaultProps = {
-  primary: false
+  primary: false,
+  onClick: () => {}
 };
 
 const Link = props => {
-  const { primary, children } = props;
+  const { primary, onClick, children } = props;
 
   return (
-    <button type="button" className={cx('link', { 'link-primary': primary })}>
+    <button
+      type="button"
+      className={cx('link', { 'link-primary': primary })}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

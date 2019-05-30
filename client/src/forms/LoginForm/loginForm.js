@@ -8,24 +8,15 @@ import Link from '../../components/Link/index';
 import { changePath } from '../../utils/utils';
 import { PATH } from '../../utils/constants';
 
-import './style.css';
-
 const props = {
   handleSubmit: PropTypes.func.isRequired
 };
 
-const RegisterForm = props => {
+const LoginForm = props => {
   const { handleSubmit, history } = props;
 
   return (
-    <FormBox handleSubmit={handleSubmit} headerLabel="Register Form">
-      <Field
-        name="displayName"
-        component={FieldInput}
-        label="Display Name"
-        placeholder="Enter your display name"
-        required
-      />
+    <FormBox handleSubmit={handleSubmit} headerLabel="LOGIN">
       <Field
         name="username"
         component={FieldInput}
@@ -41,23 +32,15 @@ const RegisterForm = props => {
         type="password"
         required
       />
-      <Field
-        name="confirmPassword"
-        component={FieldInput}
-        label="Confirm Password"
-        placeholder="Confirm your password"
-        type="password"
-        required
-      />
       <Button primary type="submit">
-        Register
-      </Button>
-      <Link primary onClick={() => changePath(history, PATH.LOGIN)}>
         Login
+      </Button>
+      <Link primary onClick={() => changePath(history, PATH.REGISTER)}>
+        Register
       </Link>
     </FormBox>
   );
 };
 
-RegisterForm.props = props;
-export default RegisterForm;
+LoginForm.props = props;
+export default LoginForm;

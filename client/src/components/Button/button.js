@@ -7,22 +7,25 @@ import './style.css';
 const props = {
   type: PropTypes.string.isRequired,
   primary: PropTypes.bool,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func
 };
 
 const defaultProps = {
   primary: false,
-  disabled: false
+  disabled: false,
+  onClick: () => {}
 };
 
 const Button = props => {
-  const { type, primary, disabled, children } = props;
+  const { type, primary, disabled, onClick, children } = props;
 
   return (
     <button
       className={cx('btn', { 'btn-primary': primary }, { disabled: disabled })}
       type={type}
       disabled={disabled}
+      onClick={onClick}
     >
       {children}
     </button>

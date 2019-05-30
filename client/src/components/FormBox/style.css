@@ -1,0 +1,28 @@
+.form-box__form {
+  display: inline-block;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 2rem 2rem 4rem;
+  min-width: 28rem;
+  min-height: 26rem;
+}
+
+.form-box__form-header {
+  margin-bottom: 4rem;
+}
+
+.form-box form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.form-box .btn {
+  width: calc(100% - 2rem);
+  margin: 1rem;
+}
