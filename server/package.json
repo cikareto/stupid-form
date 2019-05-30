@@ -1,0 +1,16 @@
+{
+  "name": "stupid-form-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  }
+}
